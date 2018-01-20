@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'RxModel_Example' do
+  pod 'RxModel', :path => '../'
+
+  target 'RxModel_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

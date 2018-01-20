@@ -1,0 +1,19 @@
+PODS:
+  - RxModel (0.1.0):
+    - RxSwift (~> 4.1)
+  - RxSwift (4.1.1)
+
+DEPENDENCIES:
+  - RxModel (from `../`)
+
+EXTERNAL SOURCES:
+  RxModel:
+    :path: ../
+
+SPEC CHECKSUMS:
+  RxModel: 71cfdc6fb61e0791557f4ef2204d4e085886d4d5
+  RxSwift: c6e3b1c7b325c7d121cd4327e9d98b7ed746b570
+
+PODFILE CHECKSUM: 85b0ed5415b540315510e32f457004fe86bb600b
+
+COCOAPODS: 1.4.0.beta.2
