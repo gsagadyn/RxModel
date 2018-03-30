@@ -1,8 +1,8 @@
 {
   "name": "RxModel",
-  "version": "0.1.0",
-  "summary": "Set of extensions of RxSwift.",
-  "homepage": "https://github.com/gsagadyn/RxQuery",
+  "version": "0.2.1",
+  "summary": "Set of extensions to RxSwift.",
+  "homepage": "https://github.com/gsagadyn/RxModel",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -11,9 +11,10 @@
     "Grzegorz Sagadyn": "sagadyn@gmail.com"
   },
   "source": {
-    "git": "https://github.com/gsagadyn/RxQuery.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/gsagadyn/RxModel.git",
+    "tag": "0.2.1"
   },
+  "swift_version": "4.1",
   "platforms": {
     "ios": "9.3"
   },
@@ -21,7 +22,7 @@
   "requires_arc": true,
   "dependencies": {
     "RxSwift": [
-      "~> 4.1"
+      "~> 4.0"
     ]
   },
   "source_files": "RxModel/Classes/**/*"
