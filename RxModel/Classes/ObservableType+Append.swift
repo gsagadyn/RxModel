@@ -19,9 +19,16 @@ public extension ObservableType {
     ///   - item: Item to append.
     /// - returns: Observable.
     public func append<T>(weak item: T?) -> Observable<(T, Self.E)> {
-        return map {
+        let observable: Observable<(T?, Self.E)>
+        if let item = item as? AnyObject {
+            observable = map { [weak item] in (item as? T, $0) }
+        } else {
+            observable = map { (item, $0) }
+        }
+        
+        return observable.map { item, value in
             guard let item = item else { throw RxRuntimeError.itemMissing }
-            return (item, $0)
+            return (item, value)
         }
     }
 }
