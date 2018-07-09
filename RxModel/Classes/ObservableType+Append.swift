@@ -20,7 +20,8 @@ public extension ObservableType {
     /// - returns: Observable.
     public func append<T>(weak item: T?) -> Observable<(T, Self.E)> {
         let observable: Observable<(T?, Self.E)>
-        if let item = item as? AnyObject {
+        
+        if Mirror(reflecting: item).displayStyle == .class, let item = item as? AnyObject {
             observable = map { [weak item] in (item as? T, $0) }
         } else {
             observable = map { (item, $0) }
