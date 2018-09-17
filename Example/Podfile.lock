@@ -1,7 +1,7 @@
 PODS:
-  - RxModel (0.2.6):
+  - RxModel (0.3.0):
     - RxSwift (~> 4.0)
-  - RxSwift (4.2.0)
+  - RxSwift (4.3.0)
 
 DEPENDENCIES:
   - RxModel (from `../`)
@@ -15,9 +15,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  RxModel: 840192449a2b45e4765bcb36b1c89141c795628f
-  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  RxModel: a4c56939a16d9f8b535d0ad3d462a96e3d542c3e
+  RxSwift: a9717a34df3179fe63563f76e046ad345078dd3a
 
 PODFILE CHECKSUM: c16c9867b748ebf9d57759ce2c29e03989e921a6
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.1
