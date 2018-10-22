@@ -25,5 +25,5 @@
       "~> 4.0"
     ]
   },
-  "source_files": "RxModel/Classes/**/*"
+  "source_files": "RxModel/**/*"
 }
