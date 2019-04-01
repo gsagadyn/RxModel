@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-public extension Observable where Element == [Any] {
+extension Observable where Element == [Any] {
     
     /// Maps JSON structure from the signal into an object which implements the Decodable protocol.
     ///
@@ -27,7 +27,7 @@ public extension Observable where Element == [Any] {
     
 }
 
-public extension Observable where Element == [String: Any] {
+extension Observable where Element == [String: Any] {
     
     /// Maps JSON structure from the signal into an object which implements the Decodable protocol.
     ///
@@ -46,7 +46,7 @@ public extension Observable where Element == [String: Any] {
     
 }
 
-public extension Observable where Element == String {
+extension Observable where Element == String {
     
     /// Maps JSON structure from the signal into an object which implements the Decodable protocol.
     ///
@@ -65,7 +65,7 @@ public extension Observable where Element == String {
     
 }
 
-public extension Observable where Element == Data {
+extension Observable where Element == Data {
     
     /// Maps JSON structure from the signal into an object which implements the Decodable protocol.
     ///

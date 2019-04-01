@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-public extension Observable where Element == [Any] {
+extension Observable where Element == [Any] {
     
     /// Creates Observable that convert JSON object to String object.
     ///
@@ -26,7 +26,7 @@ public extension Observable where Element == [Any] {
     
 }
 
-public extension Observable where Element == [String: Any] {
+extension Observable where Element == [String: Any] {
     
     /// Creates Observable that convert JSON object to String object.
     ///
@@ -44,7 +44,7 @@ public extension Observable where Element == [String: Any] {
     
 }
 
-public extension Observable where Element == Data {
+extension Observable where Element == Data {
     
     /// Creates Observable that convert data object to String object.
     ///

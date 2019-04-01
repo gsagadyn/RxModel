@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-public extension Observable where Element: Encodable {
+extension Observable where Element: Encodable {
     
     /// Map Encodable object to Data representation.
     ///

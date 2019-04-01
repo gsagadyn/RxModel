@@ -7,7 +7,7 @@
 
 import RxSwift
 
-public extension Reactive where Base: Storage {
+extension Reactive where Base: Storage {
     public func value(forKey key: Base.Key) -> Single<Base.Value?> {
         return .deferred { [weak base] in
             return .just(base?[key])

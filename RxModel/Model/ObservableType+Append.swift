@@ -12,7 +12,7 @@ public enum RxRuntimeError: Error {
     case itemMissing
 }
 
-public extension ObservableType {
+extension ObservableType {
     /// Returns Observable of tuple with item.
     ///
     /// - parameters:

@@ -7,6 +7,6 @@
 
 import Foundation
 
-public extension MemoryStorage {
+extension MemoryStorage {
     public static let shared = MemoryStorage()
 }

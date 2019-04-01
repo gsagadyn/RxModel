@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-public extension Maybe {
+extension Maybe {
     /// Returns Single of tuple with item.
     ///
     /// - parameters:

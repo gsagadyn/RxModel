@@ -22,7 +22,7 @@ public enum Expiry {
 // MARK: - Helpers
 // -----------------------------------------------------------------------------
 
-internal extension Expiry {
+extension Expiry {
     private static let futureDate = Date(timeIntervalSince1970: TimeInterval.greatestFiniteMagnitude)
     
     internal var date: Date {

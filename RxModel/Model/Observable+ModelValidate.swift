@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-public extension Observable where E: IModelValidation {
+extension Observable where E: IModelValidation {
     
     /// Validates model.
     ///

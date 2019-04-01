@@ -7,7 +7,7 @@
 
 import RxSwift
 
-public extension Single {
+extension Single {
     public func cached(forKey key: String, expiry: Expiry = .never) -> Single<E> {
         return asObservable().cached(forKey: key, expiry: expiry).asSingle()
     }

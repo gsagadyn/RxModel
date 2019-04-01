@@ -1,9 +1,9 @@
 PODS:
-  - RxAtomic (4.4.0)
-  - RxModel (0.3.1):
-    - RxSwift (~> 4.0)
-  - RxSwift (4.4.0):
-    - RxAtomic (~> 4.4)
+  - RxAtomic (4.4.2)
+  - RxModel (0.4.0):
+    - RxSwift (~> 4.4)
+  - RxSwift (4.4.2):
+    - RxAtomic (>= 4.4.2, ~> 4.4)
 
 DEPENDENCIES:
   - RxModel (from `../`)
@@ -18,10 +18,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
-  RxModel: eacc98fae1094e5c57aead917c646b7fc29a76b6
-  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
+  RxModel: 0c59848402ba0b0e4508bbf0dbe6d23a2cb41701
+  RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
 
 PODFILE CHECKSUM: c16c9867b748ebf9d57759ce2c29e03989e921a6
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

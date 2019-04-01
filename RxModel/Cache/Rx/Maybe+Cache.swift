@@ -7,7 +7,7 @@
 
 import RxSwift
 
-public extension Maybe {
+extension Maybe {
     public func cached(forKey key: String, expiry: Expiry = .never) -> Maybe<E> {
         return asObservable().cached(forKey: key, expiry: expiry).asMaybe()
     }

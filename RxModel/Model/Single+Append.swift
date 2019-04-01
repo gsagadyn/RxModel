@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-public extension Single {
+extension Single {
     /// Returns Single of tuple with item.
     ///
     /// - parameters:

@@ -15,7 +15,7 @@ public protocol OptionalType {
 
 extension Optional: OptionalType {}
 
-public extension Sequence where Iterator.Element: OptionalType {
+extension Sequence where Iterator.Element: OptionalType {
     
     /// Remove nils form sequence.
     ///

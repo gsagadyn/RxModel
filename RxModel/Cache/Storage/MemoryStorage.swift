@@ -30,7 +30,7 @@ public final class MemoryStorage: Storage {
 // MARK: - Storage Access Methods
 // -----------------------------------------------------------------------------
 
-public extension MemoryStorage {
+extension MemoryStorage {
     public subscript(key: Key) -> Value? {
         get {
             return cache.value(forKey: key)

@@ -7,7 +7,7 @@
 
 import RxSwift
 
-public extension Observable {
+extension Observable {
     public func cached(forKey key: String, expiry: Expiry = .never) -> Observable<E> {
         return cached(on: MemoryStorage.shared, forKey: key, expiry: expiry)
     }

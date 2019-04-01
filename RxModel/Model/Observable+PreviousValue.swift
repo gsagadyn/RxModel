@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-public extension ObservableType {
+extension ObservableType {
     
     /// Combines previus and current sequence value.
     ///
