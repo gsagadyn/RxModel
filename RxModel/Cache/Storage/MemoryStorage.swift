@@ -44,6 +44,10 @@ extension MemoryStorage {
         cache.setValue(value, forKey: key, expiry: expiry.date)
     }
     
+    public func removeValue(forKey key: String) {
+        cache.removeValue(forKey: key)
+    }
+    
     public func removeAll() {
         cache.removeAll()
     }

@@ -20,6 +20,9 @@ public protocol Storage: class, ReactiveCompatible {
     
     /// Sets the value for the specified key with expiry.
     func setValue(_ value: Value?, forKey key: Key, expiry: Expiry)
+    
+    /// Removes stored value for the specified key.
+    func removeValue(forKey key: Key)
         
     /// Removes all elements from the storage.
     func removeAll()

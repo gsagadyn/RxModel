@@ -21,6 +21,13 @@ extension Reactive where Base: Storage {
         }
     }
     
+    public func removeValue(forKey key: Base.Key) -> Completable {
+        return .deferred { [weak base] in
+            base?.removeValue(forKey: key)
+            return .empty()
+        }
+    }
+    
     public func removeAll() -> Completable {
         return .deferred { [weak base] in
             base?.removeAll()
