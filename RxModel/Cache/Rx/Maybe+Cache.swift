@@ -39,4 +39,12 @@ extension PrimitiveSequence where TraitType == MaybeTrait {
     public func removeCachedValue<S: Storage>(from storage: S, forKey key: S.Key) -> Maybe<ElementType> {
         return asObservable().removeCachedValue(from: storage, forKey: key).asMaybe()
     }
+    
+    public func removeAllCachedValues() -> Maybe<ElementType> {
+        return asObservable().removeAllCachedValues().asMaybe()
+    }
+    
+    public func removeAllCachedValues<S: Storage>(from storage: S) -> Maybe<ElementType> {
+        return asObservable().removeAllCachedValues(from: storage).asMaybe()
+    }
 }

@@ -45,4 +45,12 @@ extension Observable {
     public func removeCachedValue<S: Storage>(from storage: S, forKey key: S.Key) -> Observable<E> {
         return self.flatMap { storage.rx.removeValue(forKey: key).andThen(Observable.just($0)) }
     }
+    
+    public func removeAllCachedValues() -> Observable<E> {
+        return removeAllCachedValues(from: MemoryStorage.shared)
+    }
+    
+    public func removeAllCachedValues<S: Storage>(from storage: S) -> Observable<E> {
+        return self.flatMap { storage.rx.removeAll().andThen(Observable.just($0)) }
+    }
 }

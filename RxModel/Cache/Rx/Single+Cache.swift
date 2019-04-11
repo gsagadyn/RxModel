@@ -39,4 +39,12 @@ extension PrimitiveSequence where TraitType == SingleTrait {
     public func removeCachedValue<S: Storage>(from storage: S, forKey key: S.Key) -> Single<ElementType> {
         return asObservable().removeCachedValue(from: storage, forKey: key).asSingle()
     }
+    
+    public func removeAllCachedValues() -> Single<ElementType> {
+        return asObservable().removeAllCachedValues().asSingle()
+    }
+    
+    public func removeAllCachedValues<S: Storage>(from storage: S) -> Single<ElementType> {
+        return asObservable().removeAllCachedValues(from: storage).asSingle()
+    }
 }
