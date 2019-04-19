@@ -10,7 +10,9 @@ import Foundation
 internal class Cache<Key, Value> where Key: Hashable {
     // MARK: - Private Properties
     
+    private let queue = DispatchQueue(label: UUID().uuidString, qos: .background)
     private let cache = NSCache<CacheKey<Key>, CacheValue<Value>>()
+    private var keys = Set<CacheKey<Key>>()
     
     // MARK: - Internal Properties
     
@@ -65,7 +67,11 @@ internal class Cache<Key, Value> where Key: Hashable {
     // MARK: - Access Methods
     
     internal func value(forKey key: Key) -> Value? {
-        let cachedValue = cache.object(forKey: CacheKey(key))
+        var cachedValue: CacheValue<Value>?
+        
+        queue.sync {
+            cachedValue = cache.object(forKey: CacheKey(key))
+        }
         
         if cachedValue?.isExpired ?? false {
             removeValue(forKey: key)
@@ -75,18 +81,32 @@ internal class Cache<Key, Value> where Key: Hashable {
     }
     
     internal func setValue(_ value: Value?, forKey key: Key, cost: Int = 0, expiry: Date? = nil) {
-        if let value = value {
-            cache.setObject(CacheValue(value, expiry: expiry), forKey: CacheKey(key), cost: cost)
-        } else {
+        guard let value = value else {
             removeValue(forKey: key)
+            return
+        }
+        
+        queue.sync {
+            cache.setObject(CacheValue(value, expiry: expiry), forKey: CacheKey(key), cost: cost)
+            keys.insert(CacheKey(key))
         }
     }
     
     internal func removeValue(forKey key: Key) {
-        cache.removeObject(forKey: CacheKey(key))
+        queue.sync {
+            cache.removeObject(forKey: CacheKey(key))
+            keys.remove(CacheKey(key))
+        }
     }
     
     internal func removeAll() {
-        cache.removeAllObjects()
+        queue.sync {
+            cache.removeAllObjects()
+            keys.removeAll()
+        }
+    }
+    
+    internal func allKeys() -> [Key] {
+        return Array(keys).compactMap { $0.value }
     }
 }

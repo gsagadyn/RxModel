@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RxModel'
-  s.version          = '0.4.5'
+  s.version          = '0.5.0'
   s.summary          = 'Set of extensions to RxSwift.'
   s.homepage         = 'https://github.com/gsagadyn/RxModel'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

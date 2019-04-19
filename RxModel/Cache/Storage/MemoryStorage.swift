@@ -51,4 +51,8 @@ extension MemoryStorage {
     public func removeAll() {
         cache.removeAll()
     }
+    
+    public func allKeys() -> [Key] {
+        return cache.allKeys()
+    }
 }

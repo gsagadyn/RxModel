@@ -26,4 +26,7 @@ public protocol Storage: class, ReactiveCompatible {
         
     /// Removes all elements from the storage.
     func removeAll()
+    
+    /// Removes all elements from the storage.
+    func allKeys() -> [Key]
 }

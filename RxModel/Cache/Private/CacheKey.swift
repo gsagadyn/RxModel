@@ -8,9 +8,9 @@
 import Foundation
 
 internal class CacheKey<T>: NSObject where T: Hashable {
-    // MARK: - Private Properties
+    // MARK: - Internal Properties
     
-    private let value: T?
+    internal let value: T?
     
     // MARK: - Initialization
     
