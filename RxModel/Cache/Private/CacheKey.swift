@@ -31,4 +31,8 @@ internal class CacheKey<T>: NSObject where T: Hashable {
         
         return lhs == rhs
     }
+    
+    internal override var hash: Int {
+        return value?.hashValue ?? super.hash
+    }
 }
