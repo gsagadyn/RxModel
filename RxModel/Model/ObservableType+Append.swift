@@ -18,8 +18,8 @@ extension ObservableType {
     /// - parameters:
     ///   - item: Item to append.
     /// - returns: Observable.
-    public func append<T>(weak item: T?) -> Observable<(T, Self.E)> {
-        let observable: Observable<(T?, Self.E)>
+    public func append<T>(weak item: T?) -> Observable<(T, Self.Element)> {
+        let observable: Observable<(T?, Self.Element)>
         
         if let item = item, Mirror(reflecting: item).displayStyle == .class {
             let object = item as AnyObject

@@ -7,44 +7,44 @@
 
 import RxSwift
 
-extension PrimitiveSequence where TraitType == MaybeTrait {
-    public func cached<T>(forType type: T, identifier: String? = nil, expiry: Expiry = .never) -> Maybe<ElementType> {
-        return asObservable().cached(forType: type, identifier: identifier, expiry: expiry).asMaybe()
+extension PrimitiveSequence where Trait == MaybeTrait {
+    public func cached<T>(forType type: T, expiry: Expiry = .never) -> Maybe<Element> {
+        return asObservable().cached(forType: type, expiry: expiry).asMaybe()
     }
     
-    public func cached(forKey key: String, expiry: Expiry = .never) -> Maybe<ElementType> {
+    public func cached(forKey key: String, expiry: Expiry = .never) -> Maybe<Element> {
         return asObservable().cached(forKey: key, expiry: expiry).asMaybe()
     }
     
-    public func cached<T, S: Storage>(on storage: S, forType type: T, identifier: String? = nil, expiry: Expiry = .never) -> Maybe<ElementType> where S.Key == String {
-        return asObservable().cached(on: storage, forType: type, identifier: identifier, expiry: expiry).asMaybe()
+    public func cached<T, S: Storage>(on storage: S, forType type: T, expiry: Expiry = .never) -> Maybe<Element> where S.Key == String {
+        return asObservable().cached(on: storage, forType: type, expiry: expiry).asMaybe()
     }
     
-    public func cached<T: Storage>(on storage: T, forKey key: T.Key, expiry: Expiry = .never) -> Maybe<ElementType> {
+    public func cached<T: Storage>(on storage: T, forKey key: T.Key, expiry: Expiry = .never) -> Maybe<Element> {
         return asObservable().cached(on: storage, forKey: key, expiry: expiry).asMaybe()
     }
     
-    public func removeCachedValue<T>(forType type: T, identifier: String? = nil) -> Maybe<ElementType> {
-        return asObservable().removeCachedValue(forType: type, identifier: identifier).asMaybe()
+    public func removeCachedValue<T>(forType type: T) -> Maybe<Element> {
+        return asObservable().removeCachedValue(forType: type).asMaybe()
     }
     
-    public func removeCachedValue(forKey key: String) -> Maybe<ElementType> {
+    public func removeCachedValue(forKey key: String) -> Maybe<Element> {
         return asObservable().removeCachedValue(forKey: key).asMaybe()
     }
     
-    public func removeCachedValue<T, S: Storage>(from storage: S, forType type: T, identifier: String? = nil) -> Maybe<ElementType> where S.Key == String {
-        return asObservable().removeCachedValue(from: storage, forType: type, identifier: identifier).asMaybe()
+    public func removeCachedValue<T, S: Storage>(from storage: S, forType type: T) -> Maybe<Element> where S.Key == String {
+        return asObservable().removeCachedValue(from: storage, forType: type).asMaybe()
     }
     
-    public func removeCachedValue<S: Storage>(from storage: S, forKey key: S.Key) -> Maybe<ElementType> {
+    public func removeCachedValue<S: Storage>(from storage: S, forKey key: S.Key) -> Maybe<Element> {
         return asObservable().removeCachedValue(from: storage, forKey: key).asMaybe()
     }
     
-    public func removeAllCachedValues() -> Maybe<ElementType> {
+    public func removeAllCachedValues() -> Maybe<Element> {
         return asObservable().removeAllCachedValues().asMaybe()
     }
     
-    public func removeAllCachedValues<S: Storage>(from storage: S) -> Maybe<ElementType> {
+    public func removeAllCachedValues<S: Storage>(from storage: S) -> Maybe<Element> {
         return asObservable().removeAllCachedValues(from: storage).asMaybe()
     }
 }

@@ -14,7 +14,7 @@ extension Single {
     /// - parameters:
     ///   - item: Item to append.
     /// - returns: Observable.
-    public func append<T>(weak item: T?) -> Single<(T, PrimitiveSequence.E)> {
+    public func append<T>(weak item: T?) -> Single<(T, PrimitiveSequence.Element)> {
         return self.asObservable().append(weak: item).asSingle()
     }
 }

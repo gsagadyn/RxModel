@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RxModel'
-  s.version          = '0.5.1'
+  s.version          = '0.6.0'
   s.summary          = 'Set of extensions to RxSwift.'
   s.homepage         = 'https://github.com/gsagadyn/RxModel'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.3'
   s.frameworks = 'Foundation'
   s.requires_arc = true
-  s.dependency 'RxSwift', '~> 4.5'
+  s.dependency 'RxSwift', '~> 5.0'
   s.source_files = 'RxModel/**/*'
 end

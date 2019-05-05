@@ -14,7 +14,7 @@ extension Maybe {
     /// - parameters:
     ///   - item: Item to append.
     /// - returns: Observable.
-    public func append<T>(weak item: T?) -> Maybe<(T, PrimitiveSequence.E)> {
+    public func append<T>(weak item: T?) -> Maybe<(T, PrimitiveSequence.Element)> {
         return self.asObservable().append(weak: item).asMaybe()
     }
 }

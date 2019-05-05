@@ -15,7 +15,7 @@ extension ObservableType {
     /// - parameters:
     ///   - startWith: Element to prepend to the specified sequence
     /// - returns: Observable.
-    public func withPrevious(startWith value: E) -> Observable<(E, E)> {
+    public func withPrevious(startWith value: Element) -> Observable<(Element, Element)> {
         return scan((value, value), accumulator: { ($0.1, $1) }).skip(1)
     }
     

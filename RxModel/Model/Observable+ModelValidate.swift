@@ -8,17 +8,17 @@
 import Foundation
 import RxSwift
 
-extension Observable where E: IModelValidation {
+extension Observable where Element: IModelValidation {
     
     /// Validates model.
     ///
     /// - returns: The observable sequence with validated object.
-    public func validate() -> Observable<E> {
-        return self.flatMap { obj -> Observable<E> in
+    public func validate() -> Observable<Element> {
+        return self.flatMap { obj -> Observable<Element> in
             if let error = obj.validate() {
-                return Observable<E>.error(error)
+                return Observable<Element>.error(error)
             } else {
-                return Observable<E>.just(obj)
+                return Observable<Element>.just(obj)
             }
         }
     }
