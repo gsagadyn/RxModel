@@ -11,6 +11,6 @@ let package = Package(
         .library(name: "RxModel", targets: ["RxModel"])
     ],
     targets: [
-        .target(name: "RxModel", dependencies: [], path: "RxModel", resources: [])
+        .target(name: "RxModel", dependencies: [], path: "RxModel")
     ]
 )
