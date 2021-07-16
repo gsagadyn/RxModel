@@ -8,11 +8,11 @@
 import Foundation
 import RxSwift
 
-public protocol Storage: class, ReactiveCompatible {
+public protocol Storage: AnyObject, ReactiveCompatible {
     associatedtype Key: Hashable
     associatedtype Value
     
-    /// Creates an storage.
+    /// Creates a storage.
     init()
     
     /// Accesses the value for the specified key.
